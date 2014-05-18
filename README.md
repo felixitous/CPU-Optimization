@@ -1,7 +1,7 @@
 CPU Optimization
 ==
 
-This was an extended take on matrix manipulation from an earlier project and it was to use parallelism and SIMD instructions for Intel to make image processing faster on the CPU. In this case, we only handled small to medium-sized matrices. For larger matrices, we used the GPU and the code for that can be seen in my GPU repository. The hardest part of this project was finding the bottleneck in the code and where to place OpenMP statements to attain the fastest speeds and avoid false sharing or duplicate tasks. Using a combination of OpemMP, SIMD instructions, and loop unrolling, my partner and I was able to achieve speeds around 20x faster than our original code would have performed. Below is a snippet of our minimum distance calculator with all three of these optimization implementations at work. 
+This was an extended take on matrix manipulation from an earlier project and it was to use parallelism and SIMD instructions for Intel to make image processing faster on the CPU. In this case, we only handled small to medium-sized matrices. For larger matrices, we used the GPU and the code for that can be seen in my GPU repository. The hardest part of this project was finding the bottleneck in the code and where to place OpenMP statements to attain the fastest speeds and avoid false sharing or duplicate tasks. Using a combination of OpemMP, SIMD instructions, and loop unrolling, my partner and I were able to achieve speeds around 20x faster than our original code would have performed. Below is a snippet of our minimum distance calculator with all three of these optimization implementations at work. 
 
 ```c
 float calc_min_dist(float *image, int i_width, int i_height, 
